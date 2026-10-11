@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--navbar-height);
+  background: rgb(5 11 24 / 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  text-decoration: none;
+}
+
+.navbar__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+.navbar__name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.navbar__menu ul {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__menu a {
+  display: block;
+  padding: 0.4rem 0.2rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar__menu a:hover {
+  color: var(--text);
+  border-color: var(--blue-light);
+}
+
+/* El botón hamburguesa no se ve en escritorio */
+.navbar__toggle {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .navbar__name {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .navbar__toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    display: none;
+  }
+
+  .navbar__menu.is-open {
+    display: block;
+  }
+
+  .navbar__menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navbar__menu a {
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+  }
+}

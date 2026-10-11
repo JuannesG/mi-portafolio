@@ -1,0 +1,27 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a class="navbar__logo" href="#inicio" (click)="close()" aria-label="Ir al inicio">
+      <span class="navbar__mark">JG</span>
+      <span class="navbar__name">Juan Esteban Gutiérrez</span>
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      aria-controls="menu-principal"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir o cerrar el menú"
+      (click)="toggle()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="menu-principal" class="navbar__menu" [class.is-open]="menuOpen()" aria-label="Principal">
+      <ul>
+        @for (link of links; track link.href) {
+          <li><a [href]="link.href" (click)="close()">{{ link.label }}</a></li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
