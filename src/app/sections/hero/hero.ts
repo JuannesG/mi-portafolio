@@ -1,3 +1,4 @@
+import { PROFILE } from './../../data/profile';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './hero.css',
   templateUrl: './hero.html',
 })
-export class Hero {}
+export class Hero {
+  readonly profile = PROFILE;
+}
