@@ -7,7 +7,7 @@
   background:
     linear-gradient(90deg, var(--bg) 8%, rgb(5 11 24 / 0.88) 38%, rgb(5 11 24 / 0.35) 75%, rgb(5 11 24 / 0.55)),
     linear-gradient(180deg, rgb(5 11 24 / 0.6), transparent 25%, transparent 70%, var(--bg)),
-    url('/images/hero-bg.jpg') center / cover;
+    url('/images/hero-bg.webp') center / cover;
 }
 
 .hero__content {
@@ -24,8 +24,8 @@
 }
 
 .hero__avatar {
-  width: 84px;
-  height: 84px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -65,7 +65,7 @@ h1 {
   .hero {
     background:
       linear-gradient(180deg, rgb(5 11 24 / 0.85), rgb(5 11 24 / 0.7)),
-      url('/images/hero-bg.jpg') center / cover;
+      url('/images/hero-bg.webp') center / cover;
   }
 }
 
