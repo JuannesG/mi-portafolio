@@ -29,3 +29,35 @@ a {
   width: min(100% - 3rem, var(--container));
   margin-inline: auto;
 }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  border: 1.5px solid var(--blue);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--blue);
+}
+
+.btn--ghost:hover {
+  background: rgb(8 126 255 / 0.15);
+}
+
+.btn svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}

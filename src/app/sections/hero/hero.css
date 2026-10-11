@@ -1,0 +1,70 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  background-color: var(--bg);
+  background:
+    linear-gradient(90deg, var(--bg) 8%, rgb(5 11 24 / 0.88) 38%, rgb(5 11 24 / 0.35) 75%, rgb(5 11 24 / 0.55)),
+    linear-gradient(180deg, rgb(5 11 24 / 0.6), transparent 25%, transparent 70%, var(--bg)),
+    url('/images/hero-bg.jpg') center / cover;
+}
+
+.hero__content {
+  padding-block: var(--space-5);
+}
+
+.hero__hello {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.hero__avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  background: var(--panel);
+  border: 3px solid var(--blue);
+  box-shadow: 0 0 28px rgb(8 126 255 / 0.7);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+}
+
+.hero__accent {
+  display: block;
+  color: var(--blue);
+}
+
+.hero__role {
+  margin-top: var(--space-3);
+  font-weight: 600;
+}
+
+.hero__intro {
+  margin-top: var(--space-1);
+  max-width: 46ch;
+  color: var(--text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    background:
+      linear-gradient(180deg, rgb(5 11 24 / 0.85), rgb(5 11 24 / 0.7)),
+      url('/images/hero-bg.jpg') center / cover;
+  }
+}
