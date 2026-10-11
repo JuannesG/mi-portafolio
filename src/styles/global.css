@@ -61,3 +61,20 @@ a {
   height: 1.2em;
   flex-shrink: 0;
 }
+
+.section {
+  padding-block: var(--space-5);
+}
+
+.section-label {
+  margin-bottom: var(--space-1);
+  color: var(--blue-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
