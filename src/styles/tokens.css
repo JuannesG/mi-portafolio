@@ -5,9 +5,19 @@
   --blue: #087eff;
   --blue-light: #45b8ff;
   --text: #f4f7fc;
+  --text-muted: rgb(244 247 252 / 0.72);
+  --border: rgb(69 184 255 / 0.18);
 
-  /* Espaciado */
+  /* Tipografía */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Espaciado y medidas */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --container: 1200px;
+  --navbar-height: 72px;
 }
