@@ -56,6 +56,16 @@
   height: 20px;
 }
 
+.about__contact a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.about__contact a:hover {
+  color: var(--blue-light);
+  text-decoration: underline;
+}
+
 @media (max-width: 860px) {
   .about__card {
     grid-template-columns: 1fr;
