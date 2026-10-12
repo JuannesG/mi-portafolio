@@ -21,4 +21,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
     title: 'Metodologías',
     skills: ['Resolución analítica', 'Autodidacta', 'Proactividad'],
   },
+  {
+    title: 'Herramientas',
+    skills: ['Git', 'GitHub'],
+  },
 ];
