@@ -1,0 +1,56 @@
+<section id="proyectos" class="section projects">
+  <div class="container">
+    <p class="section-label">Proyectos</p>
+    <h2>Lo que he construido</h2>
+
+    <article class="project">
+      <div class="project__info">
+        <h3 class="project__title">{{ project.title }}</h3>
+        <p class="project__description">{{ project.description }}</p>
+
+        <ul class="project__tech">
+          @for (tech of project.technologies; track tech) {
+          <li>{{ tech }}</li>
+          }
+        </ul>
+
+        <ul class="project__features">
+          @for (feature of project.features; track feature) {
+          <li>{{ feature }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="project__gallery">
+        <div class="project__tabs" role="tablist">
+          <button type="button" role="tab" [class.is-active]="activeTab() === 'admin'"
+            [attr.aria-selected]="activeTab() === 'admin'" (click)="setTab('admin')">
+            Administración
+          </button>
+          <button type="button" role="tab" [class.is-active]="activeTab() === 'client'"
+            [attr.aria-selected]="activeTab() === 'client'" (click)="setTab('client')">
+            Cliente
+          </button>
+        </div>
+
+        <figure class="project__viewer">
+          <img [src]="current().src" [alt]="current().alt" />
+          <figcaption>{{ current().caption }}</figcaption>
+        </figure>
+
+        <ul class="project__thumbs">
+          @for (shot of shots(); track shot.src; let i = $index) {
+          <li>
+            <button type="button" [class.is-active]="i === selected()" [attr.aria-label]="'Ver ' + shot.caption"
+              (click)="select(i)">
+              <img [src]="shot.src" alt="" loading="lazy" />
+            </button>
+          </li>
+          }
+        </ul>
+      </div>
+    </article>
+
+    <p class="projects__more">Más proyectos próximamente.</p>
+  </div>
+</section>
