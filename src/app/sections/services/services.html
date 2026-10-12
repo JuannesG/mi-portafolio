@@ -1,0 +1,43 @@
+<section id="servicios" class="section services">
+  <div class="container">
+    <p class="section-label">Servicios</p>
+    <h2>¿Qué puedo ofrecer?</h2>
+
+    <ul class="services__grid">
+      @for (service of services; track service.title) {
+        <li class="services__card">
+          <span class="services__icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path [attr.d]="service.icon" />
+            </svg>
+          </span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </li>
+      }
+    </ul>
+
+    <a class="btn btn--primary services__cta" href="#contacto">
+      Solicitar un proyecto
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 12h14 M13 6l6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+</section>
