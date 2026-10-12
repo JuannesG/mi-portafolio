@@ -1,0 +1,174 @@
+.project {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.project__title {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  margin: 0 0 var(--space-1);
+}
+
+.project__description {
+  color: var(--text-muted);
+  max-width: 70ch;
+  margin: 0 0 var(--space-2);
+  line-height: 1.7;
+}
+
+/* Etiquetas de tecnologías */
+.project__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-2);
+}
+
+.project__tech li {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--blue-light);
+}
+
+/* Lista de funciones en dos columnas */
+.project__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.6rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-3);
+  color: var(--text-muted);
+}
+
+.project__features li {
+  position: relative;
+  padding-left: 1.4rem;
+  line-height: 1.5;
+}
+
+.project__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+/* Pestañas */
+.project__tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.project__tabs button {
+  padding: 0.5rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.project__tabs button:hover {
+  color: var(--text);
+}
+
+.project__tabs button.is-active {
+  background: var(--blue);
+  color: var(--text);
+}
+
+.project__tabs button:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+/* Galería */
+
+.project__viewer {
+  margin: 0 0 var(--space-2);
+}
+
+.project__viewer img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.project__viewer figcaption {
+  margin-top: 0.6rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.project__thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project__thumbs button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.project__thumbs button:hover {
+  opacity: 1;
+}
+
+.project__thumbs button.is-active {
+  opacity: 1;
+  border-color: var(--blue);
+}
+
+.project__thumbs button:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+.project__thumbs img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+.projects__more {
+  margin-top: var(--space-3);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 860px) {
+  .project {
+    padding: var(--space-2);
+  }
+}
