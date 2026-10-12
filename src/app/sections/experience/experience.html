@@ -1,0 +1,48 @@
+<section id="experiencia" class="section experience">
+  <div class="container">
+    <p class="section-label">Trayectoria</p>
+    <h2>Experiencia y formación</h2>
+
+    <div class="experience__columns">
+      <div>
+        <h3 class="experience__heading">Experiencia</h3>
+        <ol class="timeline">
+          @for (item of experience; track item.title) {
+            <li class="timeline__item">
+              <p class="timeline__period">{{ item.period }}</p>
+              <h4 class="timeline__title">{{ item.title }}</h4>
+              <p class="timeline__place">{{ item.place }}</p>
+              @if (item.details) {
+                <ul class="timeline__details">
+                  @for (detail of item.details; track detail) {
+                    <li>{{ detail }}</li>
+                  }
+                </ul>
+              }
+            </li>
+          }
+        </ol>
+      </div>
+
+      <div>
+        <h3 class="experience__heading">Formación</h3>
+        <ol class="timeline">
+          @for (item of education; track item.title) {
+            <li class="timeline__item">
+              <p class="timeline__period">{{ item.period }}</p>
+              <h4 class="timeline__title">{{ item.title }}</h4>
+              <p class="timeline__place">{{ item.place }}</p>
+            </li>
+          }
+        </ol>
+
+        <h3 class="experience__heading">Certificaciones Cisco</h3>
+        <ul class="experience__certs">
+          @for (cert of certifications; track cert) {
+            <li>{{ cert }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
