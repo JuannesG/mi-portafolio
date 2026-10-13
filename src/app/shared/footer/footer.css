@@ -1,0 +1,78 @@
+.footer {
+  padding-block: var(--space-3) var(--space-2);
+  border-top: 1px solid var(--border);
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.footer__name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer__role {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer__nav a:hover {
+  color: var(--blue-light);
+}
+
+.footer__copy {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer__nav button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.footer__nav button:hover {
+  color: var(--blue-light);
+}

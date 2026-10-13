@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SERVICES } from '../../data/services';
+import { ContactModal } from '../../core/contact-modal';
 
 @Component({
   selector: 'app-services',
@@ -9,4 +10,5 @@ import { SERVICES } from '../../data/services';
 })
 export class Services {
   readonly services = SERVICES;
+  readonly contact = inject(ContactModal);
 }
