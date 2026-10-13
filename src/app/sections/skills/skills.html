@@ -5,14 +5,19 @@
 
     <div class="skills__grid">
       @for (group of groups; track group.title) {
-        <article class="skills__card">
-          <h3>{{ group.title }}</h3>
-          <ul class="skills__list">
-            @for (skill of group.skills; track skill) {
-              <li>{{ skill }}</li>
+      <article class="skills__card">
+        <h3>{{ group.title }}</h3>
+        <ul class="skills__list">
+          @for (skill of group.skills; track skill) {
+          <li>
+            @if (logos[skill]; as logo) {
+            <img [src]="logo" alt="" />
             }
-          </ul>
-        </article>
+            {{ skill }}
+          </li>
+          }
+        </ul>
+      </article>
       }
     </div>
   </div>
