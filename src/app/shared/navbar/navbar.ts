@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { ContactModal } from '../../core/contact-modal';
 
 @Component({
   imports: [],
@@ -8,15 +9,20 @@ import { Component, signal } from '@angular/core';
 })
 export class Navbar {
   readonly menuOpen = signal(false);
+  private readonly contact = inject(ContactModal);
+
+  openContact() {
+    this.close();
+    this.contact.open();
+  }
 
   readonly links = [
     { label: 'Inicio', href: '#inicio' },
-    {label: 'Sobre mí', href: '#sobre-mi'},
-    {label: 'Habilidades', href: '#habilidades'},
-    {label: 'Proyectos', href: '#proyectos'},
-    {label: 'Servicios', href: '#servicios'},
-    {label: 'Experiencia', href: '#experiencia'},
-    {label: 'Contacto', href: '#contacto'},
+    { label: 'Sobre mí', href: '#sobre-mi' },
+    { label: 'Habilidades', href: '#habilidades' },
+    { label: 'Proyectos', href: '#proyectos' },
+    { label: 'Servicios', href: '#servicios' },
+    { label: 'Experiencia', href: '#experiencia' },
   ];
 
   toggle() {

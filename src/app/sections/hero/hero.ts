@@ -1,5 +1,6 @@
 import { PROFILE } from './../../data/profile';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ContactModal } from '../../core/contact-modal';
 
 @Component({
   imports: [],
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class Hero {
   readonly profile = PROFILE;
+  readonly contact = inject(ContactModal);
 }

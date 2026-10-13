@@ -1,0 +1,97 @@
+<dialog
+  #dialog
+  class="dialog"
+  aria-labelledby="contact-title"
+  (close)="onClosed()"
+  (click)="onBackdropClick($event)"
+>
+  <div class="dialog__card">
+    <button type="button" class="dialog__close" aria-label="Cerrar" (click)="contact.close()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 6l12 12 M18 6L6 18" />
+      </svg>
+    </button>
+
+    <p class="section-label">Contacto</p>
+    <h2 id="contact-title">Hablemos</h2>
+
+    @if (status() === 'success') {
+      <div class="dialog__done" role="status">
+        <h3>¡Mensaje enviado!</h3>
+        <p>Gracias por escribirme. Te responderé lo antes posible.</p>
+        <button type="button" class="btn btn--ghost" (click)="contact.close()">Cerrar</button>
+      </div>
+    } @else {
+      <p class="dialog__intro">
+        ¿Tienes un proyecto en mente o una oportunidad laboral? Estoy disponible para conversar.
+      </p>
+
+      <form class="dialog__form" [formGroup]="form" (ngSubmit)="send()" novalidate>
+        <div>
+          <label class="sr-only" for="contact-name">Nombre completo</label>
+          <input
+            id="contact-name"
+            type="text"
+            formControlName="name"
+            placeholder="Nombre completo"
+            autocomplete="name"
+            [attr.aria-invalid]="hasError(form.controls.name)"
+            [attr.aria-describedby]="hasError(form.controls.name) ? 'error-name' : null"
+          />
+          @if (hasError(form.controls.name)) {
+            <p class="dialog__error" id="error-name">Escribe tu nombre.</p>
+          }
+        </div>
+
+        <div>
+          <label class="sr-only" for="contact-email">Correo electrónico</label>
+          <input
+            id="contact-email"
+            type="email"
+            formControlName="email"
+            placeholder="Correo electrónico"
+            autocomplete="email"
+            [attr.aria-invalid]="hasError(form.controls.email)"
+            [attr.aria-describedby]="hasError(form.controls.email) ? 'error-email' : null"
+          />
+          @if (hasError(form.controls.email)) {
+            <p class="dialog__error" id="error-email">Escribe un correo válido.</p>
+          }
+        </div>
+
+        <div>
+          <label class="sr-only" for="contact-message">Mensaje</label>
+          <textarea
+            id="contact-message"
+            formControlName="message"
+            placeholder="Mensaje"
+            rows="5"
+            [attr.aria-invalid]="hasError(form.controls.message)"
+            [attr.aria-describedby]="hasError(form.controls.message) ? 'error-message' : null"
+          ></textarea>
+          @if (hasError(form.controls.message)) {
+            <p class="dialog__error" id="error-message">El mensaje debe tener al menos 10 caracteres.</p>
+          }
+        </div>
+
+        <div class="dialog__trap" aria-hidden="true">
+          <label for="contact-gotcha">No llenar este campo</label>
+          <input id="contact-gotcha" type="text" formControlName="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
+
+        @if (status() === 'error') {
+          <p class="dialog__error" role="alert">
+            No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a {{ email }}.
+          </p>
+        }
+
+        <button class="btn btn--primary dialog__submit" type="submit" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 2L11 13 M22 2l-7 20-4-9-9-4z" />
+          </svg>
+        </button>
+      </form>
+    }
+  </div>
+</dialog>

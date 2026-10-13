@@ -1,0 +1,144 @@
+.dialog {
+  width: min(100% - 2rem, 520px);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--panel);
+  color: var(--text);
+}
+
+.dialog[open] {
+  animation: dialog-in 0.2s ease-out;
+}
+
+.dialog::backdrop {
+  background: rgb(5 11 24 / 0.75);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.dialog__card {
+  position: relative;
+  padding: var(--space-3);
+}
+
+.dialog__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.dialog__close:hover {
+  color: var(--blue-light);
+  border-color: var(--blue-light);
+}
+
+.dialog__close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.dialog__card h2 {
+  margin: 0 0 var(--space-1);
+}
+
+.dialog__intro {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.dialog__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dialog__form input,
+.dialog__form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgb(5 11 24 / 0.5);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s;
+}
+
+.dialog__form textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.dialog__form input::placeholder,
+.dialog__form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.dialog__form input:focus,
+.dialog__form textarea:focus {
+  outline: none;
+  border-color: var(--blue-light);
+}
+
+.dialog__submit {
+  align-self: flex-start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open] {
+    animation: none;
+  }
+}
+.dialog__form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog__form input[aria-invalid='true'],
+.dialog__form textarea[aria-invalid='true'] {
+  border-color: #ff6b6b;
+}
+
+.dialog__error {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: #ff8a8a;
+}
+
+.dialog__trap {
+  position: absolute;
+  left: -9999px;
+}
+
+.dialog__submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.dialog__done h3 {
+  margin: 0 0 0.5rem;
+}
+
+.dialog__done p {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+  line-height: 1.6;
+}

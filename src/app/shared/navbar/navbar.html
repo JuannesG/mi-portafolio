@@ -21,6 +21,7 @@
         @for (link of links; track link.href) {
           <li><a [href]="link.href" (click)="close()">{{ link.label }}</a></li>
         }
+        <li><button type="button" (click)="openContact()">Contacto</button></li>
       </ul>
     </nav>
   </div>
