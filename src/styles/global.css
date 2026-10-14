@@ -54,7 +54,7 @@ a {
 }
 
 .btn--primary {
-  background: var(--blue);
+  background: var(--blue-strong);
   color: var(--on-blue);
 }
 
@@ -133,4 +133,32 @@ section[id] {
 /* Los componentes de sección son etiquetas propias: deben comportarse como bloques para animarse */
 main > * {
   display: block;
+}
+
+/* Anillo de foco para cualquier elemento al navegar con teclado */
+:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Enlace para saltar el menú, visible solo al enfocarlo con Tab */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--on-blue);
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
