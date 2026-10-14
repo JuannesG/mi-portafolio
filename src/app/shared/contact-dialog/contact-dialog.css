@@ -12,7 +12,7 @@
 }
 
 .dialog::backdrop {
-  background: rgb(5 11 24 / 0.75);
+  background: var(--overlay);
   backdrop-filter: blur(4px);
 }
 
@@ -74,7 +74,7 @@
 .dialog__form textarea {
   width: 100%;
   padding: 0.9rem 1rem;
-  background: rgb(5 11 24 / 0.5);
+  background: var(--field-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   color: var(--text);
@@ -114,13 +114,13 @@
 
 .dialog__form input[aria-invalid='true'],
 .dialog__form textarea[aria-invalid='true'] {
-  border-color: #ff6b6b;
+  border-color: var(--error-border);
 }
 
 .dialog__error {
   margin: 0.4rem 0 0;
   font-size: 0.85rem;
-  color: #ff8a8a;
+  color: var(--error);
 }
 
 .dialog__trap {

@@ -86,12 +86,12 @@
 }
 
 .project__tabs button:hover {
-  color: var(--text);
+  color: var(--on-blue);
 }
 
 .project__tabs button.is-active {
   background: var(--blue);
-  color: var(--text);
+  color: var(--on-blue);
 }
 
 .project__tabs button:focus-visible {

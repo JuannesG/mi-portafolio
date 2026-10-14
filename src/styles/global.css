@@ -55,10 +55,11 @@ a {
 
 .btn--primary {
   background: var(--blue);
+  color: var(--on-blue);
 }
 
 .btn--ghost:hover {
-  background: rgb(8 126 255 / 0.15);
+  background: var(--blue-tint);
 }
 
 .btn svg {

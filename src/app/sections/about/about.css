@@ -47,7 +47,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgb(8 126 255 / 0.15);
+  background: var(--blue-tint);
   color: var(--blue-light);
 }
 
