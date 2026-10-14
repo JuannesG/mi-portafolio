@@ -90,7 +90,7 @@
 }
 
 .project__tabs button.is-active {
-  background: var(--blue);
+  background: var(--blue-strong);
   color: var(--on-blue);
 }
 
