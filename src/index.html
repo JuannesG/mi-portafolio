@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <script>
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.dataset.theme = saved;
+      }
+    } catch (e) { }
+  </script>
   <meta charset="utf-8">
   <title>Mi portafolio</title>
   <base href="/">

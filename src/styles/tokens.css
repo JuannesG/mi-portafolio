@@ -1,5 +1,8 @@
-:root{
-  /* Colores */
+/* Tema oscuro (por defecto) y zonas que siempre son oscuras (.theme-dark) */
+:root,
+.theme-dark {
+  color-scheme: dark;
+
   --bg: #050b18;
   --panel: #0b1730;
   --blue: #087eff;
@@ -8,16 +11,53 @@
   --text-muted: rgb(244 247 252 / 0.72);
   --border: rgb(69 184 255 / 0.18);
 
-  /* Tipografía */
+  /* Colores que antes estaban escritos a mano en los CSS */
+  --on-blue: #ffffff;
+  --blue-tint: rgb(8 126 255 / 0.15);
+  --bg-glass: rgb(5 11 24 / 0.72);
+  --field-bg: rgb(5 11 24 / 0.5);
+  --overlay: rgb(5 11 24 / 0.75);
+  --error: #ff8a8a;
+  --error-border: #ff6b6b;
+}
+
+/* Tema claro */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f4f7fc;
+  --panel: #ffffff;
+  --blue: #087eff;
+  --blue-light: #0a5fd1;
+  --text: #0b1730;
+  --text-muted: rgb(11 23 48 / 0.75);
+  --border: rgb(8 126 255 / 0.22);
+
+  --on-blue: #ffffff;
+  --blue-tint: rgb(8 126 255 / 0.1);
+  --bg-glass: rgb(244 247 252 / 0.8);
+  --field-bg: #ffffff;
+  --overlay: rgb(11 23 48 / 0.5);
+  --error: #c92a2a;
+  --error-border: #c92a2a;
+}
+
+/* Las zonas oscuras fijan su propio color de texto */
+.theme-dark {
+  color: var(--text);
+}
+
+/* Variables que no cambian con el tema */
+:root {
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  /* Espaciado y medidas */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2.5rem;
   --space-5: 4rem;
+
   --container: 1200px;
   --navbar-height: 72px;
 }
