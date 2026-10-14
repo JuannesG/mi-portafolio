@@ -8,10 +8,11 @@ import { Services } from './sections/services/services';
 import { Experience } from './sections/experience/experience';
 import { Footer } from './shared/footer/footer';
 import { ContactDialog } from './shared/contact-dialog/contact-dialog';
+import { Reveal } from './shared/reveal';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Hero, About, Skills, Projects, Services, Experience, Footer, ContactDialog],
+  imports: [Navbar, Hero, About, Skills, Projects, Services, Experience, Footer, ContactDialog, Reveal],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
