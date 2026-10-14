@@ -34,7 +34,7 @@
         </div>
 
         <figure class="project__viewer">
-          <img [src]="current().src" [alt]="current().alt" />
+          <img [src]="current().src" [alt]="current().alt" width="1280" height="630" />
           <figcaption>{{ current().caption }}</figcaption>
         </figure>
 
@@ -43,7 +43,7 @@
           <li>
             <button type="button" [class.is-active]="i === selected()" [attr.aria-label]="'Ver ' + shot.caption"
               (click)="select(i)">
-              <img [src]="shot.src" alt="" loading="lazy" />
+              <img [src]="shot.src" alt="" loading="lazy" width="1280" height="630" />
             </button>
           </li>
           }
