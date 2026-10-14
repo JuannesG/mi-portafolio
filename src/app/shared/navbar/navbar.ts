@@ -1,5 +1,6 @@
 import { Component, signal, inject } from '@angular/core';
 import { ContactModal } from '../../core/contact-modal';
+import { ThemeService } from '../../core/theme';
 
 @Component({
   imports: [],
@@ -8,6 +9,7 @@ import { ContactModal } from '../../core/contact-modal';
   templateUrl: './navbar.html',
 })
 export class Navbar {
+  readonly theme = inject(ThemeService);
   readonly menuOpen = signal(false);
   private readonly contact = inject(ContactModal);
 
