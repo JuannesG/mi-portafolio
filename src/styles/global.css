@@ -101,3 +101,36 @@ h2 {
 body:has(dialog[open]) {
   overflow: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Al saltar a una sección, deja libre el espacio del navbar fijo */
+section[id] {
+  scroll-margin-top: var(--navbar-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Los componentes de sección son etiquetas propias: deben comportarse como bloques para animarse */
+main > * {
+  display: block;
+}
