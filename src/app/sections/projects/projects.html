@@ -33,18 +33,11 @@
           </button>
         </div>
 
-        <figure class="project__viewer">
-          <img [src]="current().src" [alt]="current().alt" width="1280" height="630" />
-          <figcaption>{{ current().caption }}</figcaption>
-        </figure>
-
-        <ul class="project__thumbs">
-          @for (shot of shots(); track shot.src; let i = $index) {
-          <li>
-            <button type="button" [class.is-active]="i === selected()" [attr.aria-label]="'Ver ' + shot.caption"
-              (click)="select(i)">
-              <img [src]="shot.src" alt="" loading="lazy" width="1280" height="630" />
-            </button>
+        <ul class="project__phones" tabindex="0" aria-label="Capturas del proyecto, desliza para ver más">
+          @for (shot of shots(); track shot.src) {
+          <li class="project__phone">
+            <img [src]="shot.src" [alt]="shot.alt" width="600" height="1301" loading="lazy" />
+            <span>{{ shot.caption }}</span>
           </li>
           }
         </ul>
